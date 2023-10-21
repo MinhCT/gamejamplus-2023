@@ -17,6 +17,10 @@ namespace States
 
         public void OnEnter()
         {
+            var currentLevel = _gameStateManager.GetCurrentLevel();
+            
+            // Load current level here
+            
         }
 
         public void OnExit()

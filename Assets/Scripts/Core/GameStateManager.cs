@@ -13,6 +13,7 @@ namespace Core
         private bool _btnSelectLevelClicked;
         private bool _hasLevelSelected;
         private bool _hasGameFinished;
+        private int _currentLevel;
 
         private void Awake()
         {
@@ -36,6 +37,8 @@ namespace Core
             AddTran(levelSelectState, inGameState, () => _hasLevelSelected);
             AddTran(inGameState, menuState, () => _hasGameFinished);
 
+            _stateMachineManager.SetState(menuState);
+
             return;
             void AddTran(IState from, IState to, Func<bool> cond) => _stateMachineManager.AddTransition(from, to, cond);
         }
@@ -51,9 +54,15 @@ namespace Core
             _btnSelectLevelClicked = true;
         }
 
-        public void ChangeLevel()
+        public void ChangeLevel(int level)
         {
+            _currentLevel = level;
+            _hasGameFinished = true;
+        }
 
+        public int GetCurrentLevel()
+        {
+            return _currentLevel;
         }
     }
 }

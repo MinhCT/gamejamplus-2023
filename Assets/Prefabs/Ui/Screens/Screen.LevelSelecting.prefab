@@ -636,6 +636,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelItem
       objectReference: {fileID: 0}
+    - target: {fileID: 4458556125072880858, guid: 37506fb7051237049bc359eb4e692b78, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458556125072880858, guid: 37506fb7051237049bc359eb4e692b78, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3217339358204806185}
+    - target: {fileID: 4458556125072880858, guid: 37506fb7051237049bc359eb4e692b78, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458556125072880858, guid: 37506fb7051237049bc359eb4e692b78, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI.Screens.LevelSelectingScreen, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458556125072880858, guid: 37506fb7051237049bc359eb4e692b78, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5366774836909960667, guid: 37506fb7051237049bc359eb4e692b78, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

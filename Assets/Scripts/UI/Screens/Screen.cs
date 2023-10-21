@@ -5,12 +5,12 @@ namespace UI.Screens
 {
     public abstract class Screen : MonoBehaviour
     {
-        private void OnEnable()
+        private void Awake()
         {
             Subscribe();
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             UnSubscribe();
         }

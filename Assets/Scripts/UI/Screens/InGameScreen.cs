@@ -1,18 +1,47 @@
-using System.Collections;
 using System.Collections.Generic;
+using Core;
+using States;
+using TMPro;
+using UI.MIcs;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class InGameScreen : MonoBehaviour
+namespace UI.Screens
 {
-    // Start is called before the first frame update
-    void Start()
+    public class InGameScreen : Screen
     {
+        private GameStateManager _gameStateManager;
+        [SerializeField] private List<Heart> hearts;
+        [SerializeField] private Slider progress;
+        [SerializeField] private TMP_Text level;
         
-    }
+        protected override void Subscribe()
+        {
+            InGameState.EnterInGameState += OnEnterInGameState;
+            InGameState.ExitInGameState += OnExitInGameState;
+        }
+        protected override void UnSubscribe()
+        {
+            InGameState.EnterInGameState -= OnEnterInGameState;
+            InGameState.ExitInGameState -= OnExitInGameState;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
+
+        private void OnEnterInGameState(GameStateManager obj)
+        {
+            ShowScreen();
+            _gameStateManager = obj;
+            
+        }
+
+        private void OnExitInGameState()
+        {
+            HideScreen();
+        }
         
+        public void SetProgress(float value)
+        {
+            progress.value = value;
+        }
     }
 }

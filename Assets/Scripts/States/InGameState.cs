@@ -1,3 +1,4 @@
+using System;
 using Core;
 
 namespace States
@@ -11,20 +12,22 @@ namespace States
             _gameStateManager = gameStateManager;
         }
 
+        public static event Action<GameStateManager> EnterInGameState;
+        public static event Action ExitInGameState;
+
         public void Tick()
         {
         }
 
         public void OnEnter()
         {
-            var currentLevel = _gameStateManager.GetCurrentLevel();
-            
-            // Load current level here
-            
+            // var currentLevel = _gameStateManager.GetCurrentLevel();
+            EnterInGameState?.Invoke(_gameStateManager);
         }
 
         public void OnExit()
         {
+            ExitInGameState?.Invoke();
         }
     }
 }

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.InputSystem.EnhancedTouch;
 using ETouch = UnityEngine.InputSystem.EnhancedTouch;
 
@@ -9,8 +8,7 @@ public class PlayerTouchMovement : MonoBehaviour
     private Vector2 JoystickSize = new Vector2(300, 300);
     [SerializeField]
     private FloatingJoystick Joystick;
-    [SerializeField]
-    private NavMeshAgent Player;
+    [SerializeField] private float turnRate = 10;
 
     private Finger MovementFinger;
     private Vector2 MovementAmount;
@@ -103,14 +101,8 @@ public class PlayerTouchMovement : MonoBehaviour
 
     private void Update()
     {
-        Vector3 scaledMovement = Player.speed * Time.deltaTime * new Vector3(
-            MovementAmount.x,
-            0,
-            MovementAmount.y
-        );
-
-        Player.transform.LookAt(Player.transform.position + scaledMovement, Vector3.up);
-        Player.Move(scaledMovement);
+        Vector3 scaledMovement = Vector3.up * MovementAmount.x + Vector3.left * MovementAmount.y;
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, scaledMovement);
     }
 
     private void OnGUI()

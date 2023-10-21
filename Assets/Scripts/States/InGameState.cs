@@ -2,6 +2,13 @@ namespace States
 {
     public class InGameState : IState
     {
+        private GameStateManager _gameStateManager;
+
+        public InGameState(GameStateManager gameStateManager)
+        {
+            _gameStateManager = gameStateManager;
+        }
+
         public void Tick()
         {
         }

@@ -11,7 +11,7 @@ namespace States
         {
             _gameStateManager = gameStateManager;
         }
-        public static event Action EnterLevelSelectingState;
+        public static event Action<GameStateManager> EnterLevelSelectingState;
         public static event Action ExitLevelSelectingState;
         
         public void Tick()
@@ -20,7 +20,7 @@ namespace States
 
         public void OnEnter()
         {
-            EnterLevelSelectingState?.Invoke();
+            EnterLevelSelectingState?.Invoke(_gameStateManager);
         }
 
         public void OnExit()

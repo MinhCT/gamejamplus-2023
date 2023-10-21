@@ -1,9 +1,12 @@
+using Core;
 using States;
 
 namespace UI.Screens
 {
     public class LevelSelectingScreen : Screen
     {
+        private GameStateManager _gameStateManager;
+
         protected override void Subscribe()
         {
             LevelSelectingState.EnterLevelSelectingState += OnEnterLevelSelectingState;
@@ -20,9 +23,15 @@ namespace UI.Screens
             HideScreen();
         }
 
-        private void OnEnterLevelSelectingState()
+        private void OnEnterLevelSelectingState(GameStateManager gameStateManager)
         {
             ShowScreen();
+            _gameStateManager = gameStateManager;
+        }
+
+        public void SelectLevel(int level)
+        {
+            _gameStateManager?.ChangeLevel(level);
         }
 
     }

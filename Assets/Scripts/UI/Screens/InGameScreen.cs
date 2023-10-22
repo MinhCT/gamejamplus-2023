@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Core;
 using TMPro;
@@ -25,6 +26,13 @@ namespace UI.Screens
         private void OnInGameStateChanged()
         {
             ShowScreen();
+            AudioManager.Instance.PlaySFXLoop("Muoi");
+        }
+
+
+        private void OnDisable()
+        {
+            AudioManager.Instance.sfxLoopSource.Pause();
         }
 
         public void SetProgress(float value)

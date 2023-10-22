@@ -13,7 +13,6 @@ public class AudioManager : MonoBehaviour
     public Sound[] musicSounds,sfxLoopSounds, sfxSounds;
     public AudioSource musicSource, sfxLoopSource,sfxSource;
 
-
     private void Awake()
     {
         if (Instance == null)
@@ -26,12 +25,7 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void Start()
-    {
-        PlayMusic("Theme");
-    }
-
+    
     public void PlayMusic(string name)
     {
         Sound sound = Array.Find(musicSounds, x => x.name == name);
@@ -61,8 +55,7 @@ public class AudioManager : MonoBehaviour
             sfxLoopSource.Play();
         }
     }
-
-
+    
     public void PlaySFX(string name)
     {
         Sound sound = Array.Find(sfxSounds, x => x.name == name);

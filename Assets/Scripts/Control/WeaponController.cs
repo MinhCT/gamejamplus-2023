@@ -134,6 +134,7 @@ public class WeaponController : MonoBehaviour
     public void OnFire(InputAction.CallbackContext context) {
         if (context.performed) {
             isFire = true;
+            AudioManager.Instance.PlaySFX("Attack");
         }
     }
     IEnumerator WaitFire() {

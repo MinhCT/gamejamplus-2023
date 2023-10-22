@@ -81,7 +81,6 @@ public class WeaponController : MonoBehaviour
             // Hitbox
             if (hitBox.OverlapCollider(new ContactFilter2D().NoFilter(), hitResults) > 0) {
                 foreach (Collider2D hit in hitResults) {
-                    Debug.Log(hit.gameObject.name);
                     if (hit.gameObject.CompareTag("Enemy")) {
                         if (hit.gameObject.GetComponent<BaseStatus>() != null) {
                             hit.gameObject.GetComponent<BaseStatus>().TakeDamage(vDamage);

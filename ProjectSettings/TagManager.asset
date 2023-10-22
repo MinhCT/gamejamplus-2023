@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Mosquito
   - Enemy
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -43,6 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 4206925841
+    locked: 0
   - name: Mosquito
     uniqueID: 2289721509
+    locked: 0
+  - name: Effect
+    uniqueID: 1930572829
     locked: 0

@@ -5,19 +5,26 @@ namespace UI.Screens
 {
     public abstract class Screen : MonoBehaviour
     {
-        private void Awake()
+        protected virtual void Awake()
         {
             Subscribe();
+            Events.StateChanged += OnStateChanged;
         }
 
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             UnSubscribe();
+            Events.StateChanged -= OnStateChanged;
+        }
+
+        private void OnStateChanged()
+        {
+            HideScreen();
         }
 
         protected abstract void Subscribe();
         protected abstract void UnSubscribe();
-        
+
         public void ShowScreen()
         {
             gameObject.SetActive(true);

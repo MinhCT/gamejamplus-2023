@@ -5,7 +5,12 @@ namespace UI.Popups
     {
         protected override void Subscribe()
         {
-            
+            Events.OpenUpdatePopup += OnOpenUpdatePopup;
+        }
+
+        private void OnOpenUpdatePopup()
+        {
+            Events.OpenUpdatePopup += OnOpenUpdatePopup;
         }
 
         protected override void UnSubscribe()

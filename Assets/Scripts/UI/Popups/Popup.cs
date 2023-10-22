@@ -4,17 +4,28 @@ namespace UI.Popups
 {
     public abstract class Popup : MonoBehaviour
     {
-        private void Awake()
+        protected virtual void Awake()
         {
             Subscribe();
+            HidePopup();
         }
 
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             UnSubscribe();
         }
 
         protected abstract void Subscribe();
         protected abstract void UnSubscribe();
+        
+        public void ShowPopup()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void HidePopup()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

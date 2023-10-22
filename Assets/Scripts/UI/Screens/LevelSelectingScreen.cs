@@ -6,12 +6,10 @@ namespace UI.Screens
     {
         protected override void Subscribe()
         {
-            throw new System.NotImplementedException();
         }
 
         protected override void UnSubscribe()
         {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -3,19 +3,17 @@ using UnityEngine;
 
 namespace Core
 {
-    public class StatesManager
+    public abstract class StatesManager
     {
         public enum State
         {
             Menu,
             Game,
             LevelSelecting
-
         }
 
         public static State currentState;
         public static State previousState;
-
 
         public static void ChangeState(State state)
         {
@@ -29,8 +27,10 @@ namespace Core
             switch (currentState)
             {
                 case State.Menu:
+                    Events.OnMenuStateChanged();
                     break;
                 case State.Game:
+                    Events.OnGameStateChanged();
                     break;
                 case State.LevelSelecting:
                     break;

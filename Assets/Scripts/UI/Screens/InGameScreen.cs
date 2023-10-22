@@ -15,13 +15,18 @@ namespace UI.Screens
         
         protected override void Subscribe()
         {
-  
+            Events.GameStateChanged += OnGameStateChanged;
         }
         protected override void UnSubscribe()
         {
-
+            Events.GameStateChanged += OnGameStateChanged;
         }
-        
+
+        private void OnGameStateChanged()
+        {
+            ShowScreen();
+        }
+
         public void SetProgress(float value)
         {
             progress.value = value;

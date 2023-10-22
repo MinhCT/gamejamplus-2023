@@ -7,14 +7,16 @@ namespace UI.Screens
 
         protected override void Subscribe()
         {
-            
+            Events.ApplicationStarted += OnApplicationStarted; 
         }
-
-
         protected override void UnSubscribe()
         {
-
+            Events.ApplicationStarted -= OnApplicationStarted; 
         }
-        
+
+        private void OnApplicationStarted()
+        {
+            HideScreen();
+        }
     }
 }

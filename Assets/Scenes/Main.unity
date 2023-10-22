@@ -1464,6 +1464,14 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1780209246}
+    - target: {fileID: 6427675664212473312, guid: 60ebabd1bef63e446aafc3ce833b8bd0, type: 3}
+      propertyPath: mosquitos.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427675664212473312, guid: 60ebabd1bef63e446aafc3ce833b8bd0, type: 3}
+      propertyPath: mosquitos.Array.data[3]
+      value: 
+      objectReference: {fileID: 8444255692118622102, guid: 00ba5a8cfd8f8134cbf12c5be419ff1b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

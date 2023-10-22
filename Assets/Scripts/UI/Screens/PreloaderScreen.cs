@@ -2,16 +2,19 @@ using Core;
 
 namespace UI.Screens
 {
-    public class LevelSelectingScreen : Screen
+    public class PreloaderScreen : Screen
     {
+
         protected override void Subscribe()
         {
-            throw new System.NotImplementedException();
+            
         }
+
 
         protected override void UnSubscribe()
         {
-            throw new System.NotImplementedException();
+
         }
+        
     }
 }

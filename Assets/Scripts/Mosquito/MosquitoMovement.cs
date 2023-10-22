@@ -35,4 +35,13 @@ public class MosquitoMovement : MonoBehaviour
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Inhere");
+            Destroy(gameObject);
+        }
+    }
 }

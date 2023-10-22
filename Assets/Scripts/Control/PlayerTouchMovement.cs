@@ -102,7 +102,7 @@ public class PlayerTouchMovement : MonoBehaviour
     private void Update()
     {
         Vector3 scaledMovement = Vector3.up * MovementAmount.x + Vector3.left * MovementAmount.y;
-        transform.rotation = Quaternion.LookRotation(Vector3.forward, scaledMovement);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, scaledMovement), turnRate);
     }
 
     private void OnGUI()

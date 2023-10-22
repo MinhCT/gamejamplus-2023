@@ -622,7 +622,7 @@ MonoBehaviour:
   - {fileID: 8415440723548495150}
   - {fileID: 2843998856485724828}
   - {fileID: 5822251543651679377}
-  progress: {fileID: 0}
+  progress: {fileID: 244755149815588118}
   level: {fileID: 853863548301935844}
 --- !u!1001 &2193986428039577421
 PrefabInstance:

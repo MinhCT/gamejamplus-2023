@@ -44,7 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f83a5684a140e47981b864b4a03210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebug: 0
   mosquitos:
   - {fileID: 6400058413163486096, guid: e05959dddbaa0b14cb93f2b545252b94, type: 3}
   - {fileID: 4511782067267520825, guid: f0540251e64a7b945839ab5a74ea71c7, type: 3}
   - {fileID: 2971048405844228807, guid: 0cc0b05f493b62e4292e575aa825f77e, type: 3}
+  - {fileID: 8444255692118622102, guid: 00ba5a8cfd8f8134cbf12c5be419ff1b, type: 3}
+  Player: {fileID: 0}
+  OuterCircleSpawnRadius: 20
+  InnerCircleSpawnRadius: 15
+  NonCircleSpawnRadius: 6

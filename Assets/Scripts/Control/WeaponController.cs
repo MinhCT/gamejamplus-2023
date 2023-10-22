@@ -34,6 +34,7 @@ public class WeaponController : MonoBehaviour
     public bool isDisableMouse = false;
     public bool isFire = false;
     public bool isWaitFire = false;
+    public bool isWaitHit = false;
 
     // Local Variables
     Vector2 targetDirection;
@@ -79,12 +80,15 @@ public class WeaponController : MonoBehaviour
             transform.position += (Vector3)vecMoveGo;
 
             // Hitbox
-            if (hitBox.OverlapCollider(new ContactFilter2D().NoFilter(), hitResults) > 0) {
-                foreach (Collider2D hit in hitResults) {
-                    if (hit.gameObject.CompareTag("Enemy")) {
-                        if (hit.gameObject.GetComponent<BaseStatus>() != null) {
-                            hit.gameObject.GetComponent<BaseStatus>().TakeDamage(vDamage);
-                            break;
+            if (!isWaitHit) {
+                if (hitBox.OverlapCollider(new ContactFilter2D().NoFilter(), hitResults) > 0) {
+                    foreach (Collider2D hit in hitResults) {
+                        if (hit.gameObject.CompareTag("Enemy")) {
+                            if (hit.gameObject.GetComponent<BaseStatus>() != null) {
+                                hit.gameObject.GetComponent<BaseStatus>().TakeDamage(vDamage);
+                                isWaitHit = true;
+                                break;
+                            }
                         }
                     }
                 }
@@ -138,6 +142,7 @@ public class WeaponController : MonoBehaviour
         yield return new WaitForSeconds(vWaitFire);
         animator.SetBool("isFire", false);
         isWaitFire = false;
+        isWaitHit = false;
     }
 
 #endregion

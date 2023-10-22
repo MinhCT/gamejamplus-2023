@@ -5,6 +5,7 @@ using UnityEngine;
 public class MosquitoMovement : MonoBehaviour
 {
     public float moveSpeed = 5;
+    public float vDamage = 20f;
     Vector3 TargetPosition; // player position
     private Rigidbody2D rb;
     Vector2 movement;
@@ -40,8 +41,10 @@ public class MosquitoMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Inhere");
-            Destroy(gameObject);
+            if (collision.gameObject.GetComponent<BaseStatus>() != null) {
+                collision.gameObject.GetComponent<BaseStatus>().TakeDamage(vDamage);
+                gameObject.GetComponent<BaseStatus>().Die();
+            }
         }
     }
 }

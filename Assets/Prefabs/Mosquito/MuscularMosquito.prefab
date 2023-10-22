@@ -132,6 +132,14 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[14].y
       value: -1.6095202
       objectReference: {fileID: 0}
+    - target: {fileID: 3404382946341426789, guid: e05959dddbaa0b14cb93f2b545252b94, type: 3}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404382946341426789, guid: e05959dddbaa0b14cb93f2b545252b94, type: 3}
+      propertyPath: currentHealth
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3474368451021783390, guid: e05959dddbaa0b14cb93f2b545252b94, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

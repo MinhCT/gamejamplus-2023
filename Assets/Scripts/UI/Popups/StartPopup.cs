@@ -1,4 +1,6 @@
 
+using Core;
+
 namespace UI.Popups
 {
     public class StartPopup : Popup
@@ -16,6 +18,14 @@ namespace UI.Popups
         private void OnStartStateChanged()
         {
             ShowPopup();
+            
+            Invoke("ToGamePlay",2f);
+        }
+
+
+        void ToGamePlay()
+        {
+            StatesManager.ChangeState(StatesManager.State.InGame);
         }
     }
 }

@@ -15,8 +15,15 @@ public class MosquitoSpawner : MonoBehaviour
 
     private void Start()
     {
+        Events.StartStateChanged += OnStartStateChanged;
+        
+    }
+
+    private void OnStartStateChanged()
+    {
         StartCoroutine(SpawnByInterval());
     }
+
 
     private void OnDrawGizmos()
     {

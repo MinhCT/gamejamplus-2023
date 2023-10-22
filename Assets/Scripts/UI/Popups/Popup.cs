@@ -8,7 +8,7 @@ namespace UI.Popups
         {
             Subscribe();
             HidePopup();
-            
+
             Events.StateChanged += OnStateChanged;
         }
 
@@ -18,13 +18,15 @@ namespace UI.Popups
             UnSubscribe();
             Events.StateChanged += OnStateChanged;
         }
+
         private void OnStateChanged()
         {
-HidePopup();        }
+            HidePopup();
+        }
 
         protected abstract void Subscribe();
         protected abstract void UnSubscribe();
-        
+
         public void ShowPopup()
         {
             gameObject.SetActive(true);

@@ -5,13 +5,13 @@ namespace Core
 {
     public class ApplicationManager: MonoBehaviour
     {
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        private static void RuntimeInit()
-        {
-            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "Main") return;
-            var app = new GameObject { name = "[ApplicationManager]" };
-            app.AddComponent<ApplicationManager>();
-        }
+        // [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        // private static void RuntimeInit()
+        // {
+        //     if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "Main") return;
+        //     var app = new GameObject { name = "[ApplicationManager]" };
+        //     app.AddComponent<ApplicationManager>();
+        // }
 
         private void Awake()
         {
@@ -25,7 +25,7 @@ namespace Core
 
         private void Start()
         {
-            Invoke("ApplicationStarted", 2.0f);
+            Invoke("ApplicationStarted", 1.0f);
         }
 
         private void ApplicationStarted()
@@ -36,7 +36,7 @@ namespace Core
         private void OnApplicationStarted()
         {
             StatesManager.ChangeState(StatesManager.State.Menu);
-            Destroy(this);
+            // Destroy(this);
         }
     }
 }

@@ -1,3 +1,6 @@
+using Core;
+using UnityEngine.SceneManagement;
+
 namespace UI.Popups
 {
     public class LosePopup : Popup
@@ -15,6 +18,11 @@ namespace UI.Popups
         protected override void UnSubscribe()
         {
             Events.LoseStateChanged += OnLoseStateChanged;
+        }
+
+        public void OnClickButtonReplay()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

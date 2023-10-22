@@ -1,21 +1,21 @@
 
 namespace UI.Popups
 {
-    public class UpdatePopup : Popup
+    public class WinPopup : Popup
     {
         protected override void Subscribe()
         {
-            Events.OpenUpdatePopup += OnOpenUpdatePopup;
+            Events.WinStateChanged += OnWinStateChanged;
         }
 
-        private void OnOpenUpdatePopup()
+        private void OnWinStateChanged()
         {
             ShowPopup();
         }
-
+        
         protected override void UnSubscribe()
         {
-            Events.OpenUpdatePopup += OnOpenUpdatePopup;
+            Events.WinStateChanged += OnWinStateChanged;
         }
     }
 }

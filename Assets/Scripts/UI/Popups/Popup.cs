@@ -8,12 +8,19 @@ namespace UI.Popups
         {
             Subscribe();
             HidePopup();
+            
+            Events.StateChanged += OnStateChanged;
         }
+
 
         protected virtual void OnDestroy()
         {
             UnSubscribe();
+            Events.StateChanged += OnStateChanged;
         }
+        private void OnStateChanged()
+        {
+HidePopup();        }
 
         protected abstract void Subscribe();
         protected abstract void UnSubscribe();

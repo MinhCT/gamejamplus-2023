@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 6756127381769382757}
   - component: {fileID: 3557956198759036800}
   - component: {fileID: 2939108986391882187}
-  - component: {fileID: 3540865463449998811}
+  - component: {fileID: 2770912293210741028}
   m_Layer: 5
   m_Name: Popup.Update
   m_TagString: Untagged
@@ -200,7 +200,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &3540865463449998811
+--- !u!114 &2770912293210741028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7592144438542468692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7e90dc039b14c3bbd7a1b8162c2bb73, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ba9d12843d68e546b5fb9c7c7ec43fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4787448307233418703

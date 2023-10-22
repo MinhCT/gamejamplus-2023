@@ -15,14 +15,14 @@ namespace UI.Screens
         
         protected override void Subscribe()
         {
-            Events.GameStateChanged += OnGameStateChanged;
+            Events.InGameStateChanged += OnInGameStateChanged;
         }
         protected override void UnSubscribe()
         {
-            Events.GameStateChanged += OnGameStateChanged;
+            Events.InGameStateChanged += OnInGameStateChanged;
         }
 
-        private void OnGameStateChanged()
+        private void OnInGameStateChanged()
         {
             ShowScreen();
         }

@@ -5,7 +5,10 @@ public abstract class Events
     public static event Action StateChanged;
     public static event Action ApplicationStarted;
     public static event Action MenuStateChanged;
-    public static event Action GameStateChanged;
+    public static event Action InGameStateChanged;
+    public static event Action LoseStateChanged;
+    public static event Action WinStateChanged;
+    public static event Action StartStateChanged;
     public static event Action CloseUpdatePopup;
     public static event Action OpenUpdatePopup;
 
@@ -24,11 +27,11 @@ public abstract class Events
         MenuStateChanged?.Invoke();
     }
 
-    public static void OnGameStateChanged()
+    public static void OnInGameStateChanged()
     {
-        GameStateChanged?.Invoke();
+        InGameStateChanged?.Invoke();
     }
-
+    
     public static void OnOpenUpdatePopup()
     {
         OpenUpdatePopup?.Invoke();
@@ -37,5 +40,20 @@ public abstract class Events
     public static void OnCloseUpdatePopup()
     {
         CloseUpdatePopup?.Invoke();
+    }
+
+    public static void OnLoseStateChanged()
+    {
+        LoseStateChanged?.Invoke();
+    }
+
+    public static void OnWinStateChanged()
+    {
+        WinStateChanged?.Invoke();
+    }
+
+    public static void OnStartStateChanged()
+    {
+        StartStateChanged?.Invoke();
     }
 }

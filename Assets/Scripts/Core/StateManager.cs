@@ -8,8 +8,11 @@ namespace Core
         public enum State
         {
             Menu,
-            Game,
-            LevelSelecting
+            InGame,
+            Start,
+            Lose,
+            Win,
+            LevelSelecting,
         }
 
         public static State currentState;
@@ -29,13 +32,22 @@ namespace Core
                 case State.Menu:
                     Events.OnMenuStateChanged();
                     break;
-                case State.Game:
-                    Events.OnGameStateChanged();
+                case State.InGame:
+                    Events.OnInGameStateChanged();
                     break;
                 case State.LevelSelecting:
                     break;
+                case State.Start:
+                    Events.OnStartStateChanged();
+                    break;
+                case State.Lose: 
+                    Events.OnLoseStateChanged();
+                    break;
+                case State.Win: 
+                    Events.OnWinStateChanged();
+                    break;
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    break;
             }
         }
 

@@ -21,7 +21,7 @@ namespace UI.Screens
 
         public void OnClickButtonPlay()
         {
-            StatesManager.ChangeState(StatesManager.State.Game);
+            StatesManager.ChangeState(StatesManager.State.InGame);
         }
     }
 }
